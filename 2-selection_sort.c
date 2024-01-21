@@ -6,24 +6,24 @@
  */
 void selection_sort(int *array, size_t size)
 {
-  size_t i, j;
-  size_t min_idx;
+	size_t i, j;
+	size_t min_idx;
 
-  if (array == NULL || size < 2)
-    return;
-  for (i = 0; i < size - 1; i++)
-  {
-    min_idx = i;
-    for (j = i + 1; j < size; j++)
-    {
-      min_idx = (array[j] < array[min_idx]) ? j : min_idx;
-    }
-      if (i != min_idx)
-      {
-        swap_indx(&array[min_idx], &array[i]);
-        print_array(array, size);
-      }
-  }
+	if (array == NULL || size < 2)
+		return;
+	for (i = 0; i < size - 1; i++)
+	{
+		min_idx = i;
+		for (j = i + 1; j < size; j++)
+		{
+			min_idx = (array[j] < array[min_idx]) ? j : min_idx;
+		}
+		if (i != min_idx)
+		{
+			swap_indx(&array[min_idx], &array[i]);
+			print_array(array, size);
+		}
+	}
 }
 /**
  * swap_indx - swap betweem two indexs
@@ -32,7 +32,9 @@ void selection_sort(int *array, size_t size)
  */
 void swap_indx(int *a, int *b)
 {
-    int temp = *a;
-    *a = *b;
-    *b = temp;
+	int temp;
+
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
