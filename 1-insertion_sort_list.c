@@ -24,18 +24,24 @@ void insertion_sort_list(listint_t **list)
     }
     
 }
-void swap_nodes(listint_t **h, listint_t **data1, listint_t *data2)
+/**
+ * swap_nodes - swap nodes with data
+ * @h: header of the node
+ * @n1: data of node one
+ * @n2: data of node two
+ */
+void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
 {
-    (*data1)->next = data2->next;
-    if (data2->next != NULL)
-        data2->next->prev = *data1;
+    (*n1)->next = n2->next;
+    if (n2->next != NULL)
+        n2->next->prev = *n1;
 
-    data2->prev = (*data1)->prev;
-    data2->next = *data1;
-    if ((*data1)->prev != NULL)
-        (*data1)->prev->next = data2;
+    n2->prev = (*n1)->prev;
+    n2->next = *n1;
+    if ((*n1)->prev != NULL)
+        (*n1)->prev->next = n2;
     else
-        *h = data2;
-    (*data1)->prev = data2;
-    *data1 = data2->prev;
+        *h = n2;
+    (*n1)->prev = n2;
+    *n1 = n2->prev;
 }
