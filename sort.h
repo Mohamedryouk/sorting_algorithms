@@ -2,6 +2,7 @@
 #define __SORT__
 #include <stdio.h>
 #include <stdbool.h>
+#include <stdlib.h>
 /**
  * struct listint_s - Doubly linked list node
  *
@@ -31,5 +32,8 @@ void quick_sort_recursion(int *array, size_t size, int low, int high);
 void cocktail_sort_list(listint_t **list);
 void swap_node_behind(listint_t **list, listint_t **tail, listint_t **Head);
 void swap_node_ahead(listint_t **list, listint_t **tail, listint_t **Head);
+void counting_sort(int *array, size_t size);
+int find_max(int *array, size_t size);
+void print_counting_array(int *array, size_t size);
 
 #endif
