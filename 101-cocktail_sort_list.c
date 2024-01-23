@@ -5,37 +5,37 @@
  */
 void cocktail_sort_list(listint_t **list)
 {
-    listint_t *tail, *ahead;
-    bool isswap = false;
+	listint_t *tail, *ahead;
+	bool isswap = false;
 
-    if (list == NULL || *list == NULL || (*list)->next == NULL)
-        return;
+	if (list == NULL || *list == NULL || (*list)->next == NULL)
+		return;
 
-    for (tail = *list; tail->next != NULL;)
-        tail = tail->next;
+	for (tail = *list; tail->next != NULL;)
+		tail = tail->next;
 
-    while (isswap == false)
-    {
-        isswap = true;
-        for (ahead = *list; ahead != tail; ahead = ahead->next)
-        {
-            if (ahead->n > ahead->next->n)
-            {
-                swap_node_ahead(list, &tail, &ahead);
-                print_list((const listint_t *)*list);
-                isswap = false;
-            }
-        }
-        for (ahead = tail; ahead != *list; ahead = ahead->prev)
-        {
-            if (ahead->n < ahead->prev->n)
-            {
-                swap_node_behind(list, &tail, &ahead);
-                print_list((const listint_t *)*list);
-                isswap = false;
-            }
-        }
-    }
+	while (isswap == false)
+	{
+		isswap = true;
+		for (ahead = *list; ahead != tail; ahead = ahead->next)
+		{
+			if (ahead->n > ahead->next->n)
+			{
+				swap_node_ahead(list, &tail, &ahead);
+				print_list((const listint_t *)*list);
+				isswap = false;
+			}
+		}
+		for (ahead = tail; ahead != *list; ahead = ahead->prev)
+		{
+			if (ahead->n < ahead->prev->n)
+			{
+				swap_node_behind(list, &tail, &ahead);
+				print_list((const listint_t *)*list);
+				isswap = false;
+			}
+		}
+	}
 }
 /**
  * swap_node_ahead- swap node ahead
