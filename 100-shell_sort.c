@@ -2,7 +2,7 @@
 /**
  *shell_sort - shill sort algorithm
  *@array: array to be sorted
- *@length: length of array
+ *@size: length of array
  */
 void shell_sort(int *array, size_t size)
 {
@@ -22,7 +22,7 @@ void shell_sort(int *array, size_t size)
 			insertion_value = array[outer];
 			inner = outer;
 
-			while(inner >= gap && array[inner - gap] > insertion_value)
+			while (inner >= gap && array[inner - gap] > insertion_value)
 			{
 				array[inner] = array[inner - gap];
 				inner -= gap;
