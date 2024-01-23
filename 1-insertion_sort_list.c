@@ -2,44 +2,52 @@
 /**
  * insertion_sort_list - function to sort
  *@list: list to be sorted
- *
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *iterate, *insert, *temp;
+	listint_t *current;
 
 	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
-		return;
-
-	for (iterate = (*list)->next; iterate != NULL; iterate = temp)
 	{
-		temp = iterate->next;
-		insert = iterate->prev;
-		while (insert != NULL && iterate->n < insert->n)
+		return;
+	}
+	current = (*list)->next;
+	while (current != NULL)
+	{
+		listint_t *prev = current->prev;
+		listint_t *temp = current;
+
+		while (prev != NULL && prev->n > current->n)
 		{
-			swap_nodes(list, &insert, iterate);
-			print_list((const listint_t *)*list);
+			swap_nodes(list, prev, current);
+			print_list(*list);
+			prev = temp->prev;
 		}
+		current = current->next;
 	}
 }
 /**
  * swap_nodes - swap nodes with data
- * @h: header of the node
- * @n1: data of node one
- * @n2: data of node two
+ * @list: header of the node
+ * @node1: data of node one
+ * @node2: data of node two
  */
-void swap_nodes(listint_t **h, listint_t **n1, listint_t *n2)
+void swap_nodes(listint_t **list, listint_t *node1, listint_t *node2)
 {
-	(*n1)->next = n2->next;
-	if (n2->next != NULL)
-		n2->next->prev = *n1;
-
-	n2->prev = (*n1)->prev;
-	n2->next = *n1;
-	if ((*n1)->prev != NULL)
-		(*n1)->prev->next = n2;
+	if (node1->prev != NULL)
+	{
+		node1->prev->next = node2;
+	}
 	else
-		*h = n2;
-	(*n1)->prev = n2;
-	*n1 = n2->prev;
+	{
+		*list = node2;
+	}
+	if (node2->next != NULL)
+	{
+		node2->next->prev = node1;
+	}
+	node1->next = node2->next;
+	node2->prev = node1->prev;
+	node1->prev = node2;
+	node2->next = node1;
 }
