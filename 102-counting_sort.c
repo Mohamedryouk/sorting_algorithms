@@ -6,7 +6,7 @@
  */
 void counting_sort(int *array, size_t size)
 {
-    int i, *count, *sorted, k;
+	int i, *count, *sorted, k;
 	if (array == NULL || size < 2)
 		return;
 	sorted = malloc(sizeof(int) * size);
@@ -50,9 +50,10 @@ void counting_sort(int *array, size_t size)
  * @size: size of the array
  * Return: return the max
  */
-int find_max(int *array, size_t size) {
-    int k = array[0];
-    size_t i;
+int find_max(int *array, size_t size)
+{
+	int k = array[0];
+	size_t i;
 
 	for (i = 1; i < size; i++)
 	{
@@ -61,5 +62,5 @@ int find_max(int *array, size_t size) {
 			k = array[i];
 		}
 	}
-	return k;
+	return (k);
 }
