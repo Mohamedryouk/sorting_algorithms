@@ -1,4 +1,9 @@
 #include "sort.h"
+/**
+ *swap - swaps two elements
+ *@x: element one
+ *@y: element two
+ */
 void swap(int *x, int *y)
 {
   int temp;
@@ -6,6 +11,14 @@ void swap(int *x, int *y)
   *x = *y;
   *y = temp;
 }
+/**
+ * lomuto_partition- lomuto way
+ *@array: array of element
+ *@size: size of array
+ *@low: low value of pivot
+ *@high: high value of index of pivot
+ *Return: returns the last pivot value
+ */
 int lomuto_partition(int *array, size_t size, int low, int high)
 {
   int *pivot_value, j/*below*/, i/*above*/;
@@ -30,6 +43,13 @@ int lomuto_partition(int *array, size_t size, int low, int high)
   }
   return i;
 }
+/**
+ *quick_sort_recursion - recursion step after pivot returned
+ *@array: array to be sorted
+ *@size: size of the array
+ *@low: low value of pivot or index
+ *@high: high value of pivot or index
+ */
 void quick_sort_recursion(int *array, size_t size, int low, int high)
 {
   int pivot_index;
@@ -41,6 +61,11 @@ void quick_sort_recursion(int *array, size_t size, int low, int high)
     quick_sort_recursion(array, size, pivot_index + 1, high);
   }
 }
+/**
+ *quick_sort - quick sort algorithm function
+ *@array: array to be sorted
+ *@size: size of the array
+ */
 void quick_sort(int *array, size_t size)
 {
   if (array == NULL || size < 2)
