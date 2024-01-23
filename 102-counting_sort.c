@@ -7,6 +7,7 @@
 void counting_sort(int *array, size_t size)
 {
 	int i, *count, *sorted, k;
+
 	if (array == NULL || size < 2)
 		return;
 	sorted = malloc(sizeof(int) * size);
