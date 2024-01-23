@@ -27,4 +27,5 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int lomuto_partition(int *array, size_t size, int low, int high);
 void quick_sort_recursion(int *array, size_t size, int low, int high);
+
 #endif
