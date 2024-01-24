@@ -7,8 +7,8 @@
  */
 void print_subarray(const char *label, const int *array, size_t size)
 {
-    printf("[%s]: ", label);
-    print_array(array, size);
+	printf("[%s]: ", label);
+	print_array(array, size);
 }
 /**
  * merge - merge the arrays
@@ -32,7 +32,7 @@ void merge(int *array, int *left, size_t left_size, int *right, size_t right_siz
 		{
 			array[k] = left[i];
 			i++;
-        	}
+		}
 		else
 		{
 			array[k] = right[j];
@@ -74,7 +74,7 @@ void merge_sort(int *array, size_t size)
 		int *left = malloc(left_size * sizeof(int));
 		int *right = malloc(right_size * sizeof(int));
 
-        	for (i = 0; i < left_size; i++)
+		for (i = 0; i < left_size; i++)
 		{
 			left[i] = array[i];
 		}
