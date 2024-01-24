@@ -24,7 +24,6 @@ void bubble_sort(int *array, size_t size);
 void print_list(const listint_t *list);
 void insertion_sort_list(listint_t **list);
 void swap_indx(int *a, int *b);
-void swap(int *x, int *y);
 void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 int lomuto_partition(int *array, size_t size, int low, int high);
@@ -38,5 +37,7 @@ void print_counting_array(int *array, size_t size);
 void print_subarray(const char *label, const int *array, size_t size);
 void merge(int *array, int *left, size_t L_size, int *right, size_t R_size);
 void merge_sort(int *array, size_t size);
+void swap_heaps(int *a, int *b);
+void heap_sort(int *array, size_t size);
 
 #endif
