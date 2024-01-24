@@ -1,10 +1,23 @@
 #include "sort.h"
+/**
+ * print_subarray
+ * @label: label of the array
+ * @array: the array
+ * @size: length or size of the array
+ */
 void print_subarray(const char *label, const int *array, size_t size)
 {
     printf("[%s]: ", label);
     print_array(array, size);
 }
-
+/**
+ * merge - merge the arrays
+ * @array: the array
+ * @left: left side
+ * @left_size: left length or size
+ * @right: right side
+ * @right_size: right lenght or size
+ */
 void merge(int *array, int *left, size_t left_size, int *right, size_t right_size)
 {
 	size_t i = 0, j = 0, k = 0;
@@ -43,7 +56,11 @@ void merge(int *array, int *left, size_t left_size, int *right, size_t right_siz
 	}
 	print_subarray("Done", array, left_size + right_size);
 }
-
+/**
+ * merge_sort - merge sort algorithm using top down
+ * @array: array to be sorted
+ * @size: size of the array to be sorted
+ */
 void merge_sort(int *array, size_t size)
 {
 	size_t i;
