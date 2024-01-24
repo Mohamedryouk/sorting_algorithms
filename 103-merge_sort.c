@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * print_subarray
+ * print_subarray - subarray function.
  * @label: label of the array
  * @array: the array
  * @size: length or size of the array
@@ -11,7 +11,7 @@ void print_subarray(const char *label, const int *array, size_t size)
 	print_array(array, size);
 }
 /**
- * merge - merge the arrays
+ * merge- merge the arrays
  * @array: the array
  * @left: left side
  * @L_size: left length or size
